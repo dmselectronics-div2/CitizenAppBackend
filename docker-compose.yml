@@ -1,0 +1,36 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: bluetally_mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: M9@rT!7ZxQe4#KpL2$A8wC
+      MONGO_INITDB_DATABASE: bluetally
+    volumes:
+      - bluetally_mongo_data:/data/db
+    networks:
+      - bluetally_net
+    # ❌ DO NOT expose MongoDB port
+
+  api:
+    build: .
+    container_name: bluetally_api
+    restart: unless-stopped
+    environment:
+      PORT: 5000
+      MONGO_URI: mongodb://admin:M9@rT!7ZxQe4#KpL2$A8wC@mongo:27017/bluetally?authSource=admin
+      NODE_ENV: production
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    networks:
+      - bluetally_net
+
+volumes:
+  bluetally_mongo_data:
+
+networks:
+  bluetally_net:
+    driver: bridge
