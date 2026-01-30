@@ -12,9 +12,8 @@ import CreditRoutes from "./Routes/CreditRoutes.js";
 import PhotoInformation from "./models/creditModel.js";
 
 
-// console.log('userRoutes type:', typeof userRoutes);
-// console.log('plantRoutes type:', typeof plantRoutes);
-// console.log('natureRoutes type:', typeof natureRoutes);
+
+
 // console.log('animalRoutes type:', typeof animalRoutes);
 // console.log('CreditRoutes type:', typeof CreditRoutes);
 
