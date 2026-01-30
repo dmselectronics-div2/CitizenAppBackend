@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: "M9@rT!7ZxQe4#KpL2$$A8wC"
+      MONGO_INITDB_ROOT_PASSWORD: BlueTally2026DbAdminX9K7
       MONGO_INITDB_DATABASE: bluetally
     volumes:
       - bluetally_mongo_data:/data/db
@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
     environment:
       PORT: 5000
-      MONGO_URI: "mongodb://admin:M9@rT!7ZxQe4#KpL2$$A8wC@mongo:27017/bluetally?authSource=admin"
+      MONGO_URI: mongodb://admin:BlueTally2026DbAdminX9K7@mongo:27017/bluetally?authSource=admin
       NODE_ENV: production
     ports:
       - "5000:5000"
