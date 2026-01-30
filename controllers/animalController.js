@@ -4,7 +4,7 @@ export const createAnimal = async (req, res) => {
   try {
     console.log('POST /api/animals - Received request');
     console.log('Body size:', JSON.stringify(req.body).length, 'bytes');
-    
+       
     const { 
       animalType, 
       photo, 
